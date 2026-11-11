@@ -97,5 +97,9 @@ export class RiderModel {
   }
 
   /* masque les parties visibles de près en vue casque */
-  setFirstPerson(on) { this.head.visible = !on; this.limb.neck.visible = !on; this.pack.visible = !on; }
+  // vue casque : haut du corps et bras cachés (sinon ils remplissent l'écran) ; on voit le guidon et le compteur
+  setFirstPerson(on) {
+    const L = this.limb, J = this.joint;
+    for (const o of [this.head, L.neck, this.pack, L.torso, L.upperL, L.upperR, J.chest, J.shoulderL, J.shoulderR, J.elbowL, J.elbowR, L.foreL, L.foreR, ...this.hands]) o.visible = !on;
+  }
 }

@@ -59,6 +59,14 @@ Terrain généré par segments chargés et déchargés autour du pilote, végét
 
 JavaScript (modules ES) et [Three.js](https://threejs.org/) r186 chargé par import map depuis un CDN. Sans étape de build.
 
+## Fiche technique
+
+Résumé de ce que fait le code, tenu à jour à chaque modification : le lire suffit pour vérifier une information sans relire tout le jeu.
+
+- **Vélo** : `assets/models/enduro-dh.glb` (`src/main.js`).
+- **Caméras (C, `src/camera/CameraRig.js`)** : Troisième personne, Vue casque, Vue éloignée. En vue casque, `RiderModel.setFirstPerson` cache la tête, le cou, le sac, le buste, les bras et les mains du pilote.
+- **Sauvegarde** : `downhill-riders:v1`.
+
 ## Crédits des modèles 3D
 
 Véhicules réels sous licence CC-BY (Sketchfab) : auteurs et licences dans `assets/models/CREDITS.md`.
